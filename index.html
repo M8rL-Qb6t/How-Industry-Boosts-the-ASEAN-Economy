@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Powerhouse: How Industry Boosts the ASEAN Economy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #1a2a3a;
+            color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #0c4b8a 0%, #1a7f64 100%);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #d1e8ff;
+            margin-bottom: 15px;
+        }
+        
+        .presenter-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            height: 580px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+        
+        .slides {
+            display: flex;
+            width: 1000%;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .slide {
+            width: 10%;
+            height: 100%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 30, 60, 0.85);
+            z-index: 1;
+        }
+        
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .slide-title {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+            color: #4dabf7;
+            border-bottom: 2px solid #4dabf7;
+            padding-bottom: 10px;
+        }
+        
+        .slide-subtitle {
+            font-size: 1.6rem;
+            color: #a5d8ff;
+            margin-bottom: 25px;
+        }
+        
+        .slide-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #e9f7ff;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .stat-box {
+            background: rgba(77, 171, 247, 0.15);
+            border-left: 4px solid #4dabf7;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #69db7c;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            color: #a5d8ff;
+        }
+        
+        .list-container {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        
+        .list-container li {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
+        
+        .highlight {
+            color: #69db7c;
+            font-weight: bold;
+        }
+        
+        .sources {
+            font-size: 1rem;
+            color: #a5d8ff;
+            margin-top: 25px;
+            font-style: italic;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            padding: 0 20px;
+        }
+        
+        .nav-btn {
+            background: rgba(77, 171, 247, 0.8);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(77, 171, 247, 1);
+            transform: scale(1.1);
+        }
+        
+        .slide-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .indicator {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicator.active {
+            background-color: #4dabf7;
+            transform: scale(1.2);
+        }
+        
+        .slide-counter {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            color: #a5d8ff;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #a5d8ff;
+            font-size: 1rem;
+            padding: 20px;
+            width: 100%;
+            border-top: 1px solid rgba(77, 171, 247, 0.3);
+        }
+        
+        @media (max-width: 900px) {
+            .slider-container {
+                height: 650px;
+            }
+            
+            .slide {
+                padding: 30px 25px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .slide-text {
+                font-size: 1.2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .slider-container {
+                height: 700px;
+            }
+            
+            .slide-title {
+                font-size: 1.8rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .slide-text {
+                font-size: 1.1rem;
+            }
+            
+            .presenter-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Industrial Powerhouse: How Industry Boosts the ASEAN Economy</h1>
+            <div class="subtitle">Driving Growth, Innovation, and Regional Integration in the 2020s</div>
+            <div class="presenter-info">
+                <div class="presenter">Presenter: <span class="highlight">[Your Name]</span></div>
+                <div class="date">Date: <span class="highlight">[Date]</span></div>
+            </div>
+        </div>
+        
+        <div class="slider-container">
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide" id="slide1">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Industrial Powerhouse: How Industry Boosts the ASEAN Economy</h2>
+                        <h3 class="slide-subtitle">Driving Growth, Innovation, and Regional Integration in the 2020s</h3>
+                        <div class="presenter-info" style="justify-content: flex-start; margin-top: 40px;">
+                            <div class="presenter" style="font-size: 1.5rem;">Presenter: <span class="highlight">[Your Name]</span></div>
+                            <div class="date" style="font-size: 1.5rem; margin-left: 40px;">Date: <span class="highlight">[Date]</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide" id="slide2">
+                    <div class="slide-content">
+                        <h2 class="slide-title">ASEAN Economic Landscape</h2>
+                        <p class="slide-text">The Big Picture: ASEAN is on track to become the 4th largest economy in the world by 2030.</p>
+                        
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <div class="stat-value">$4.1+ Trillion</div>
+                                <div class="stat-label">Combined GDP (2024-2025)</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">37.5%</div>
+                                <div class="stat-label">Industrial Contribution to GDP</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">4.5-4.7%</div>
+                                <div class="stat-label">Annual Growth Projection through 2025</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">4th Largest</div>
+                                <div class="stat-label">Global Economy by 2030</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide" id="slide3">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Manufacturing: The Engine of Growth</h2>
+                        <p class="slide-text">ASEAN is a premier destination for "China + 1" strategies as multinational firms diversify supply chains.</p>
+                        
+                        <h3 class="slide-subtitle" style="margin-top: 25px; font-size: 1.4rem;">Key Industrial Sectors:</h3>
+                        <ul class="list-container">
+                            <li><span class="highlight">Electronics:</span> Malaysia, Vietnam, and Thailand lead in semiconductors and high-tech components.</li>
+                            <li><span class="highlight">Automotive:</span> Thailand and Indonesia serve as the "Detroit of the East" (growing focus on EVs).</li>
+                            <li><span class="highlight">Textiles:</span> Vietnam and Cambodia remain global leaders in garment manufacturing.</li>
+                        </ul>
+                        
+                        <div class="stat-box" style="margin-top: 30px; grid-column: 1 / -1;">
+                            <div class="stat-value">$226 Billion</div>
+                            <div class="stat-label">FDI in Manufacturing (2024), growing by 8.5%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="slide" id="slide4">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Moving Up the Value Chain</h2>
+                        <p class="slide-text">From Low-Cost to High-Tech: Shifting from basic assembly to advanced manufacturing (Industry 4.0).</p>
+                        
+                        <div class="stats-container" style="margin-top: 30px;">
+                            <div class="stat-box">
+                                <div class="stat-label">R&D Centers</div>
+                                <p class="slide-text" style="margin-top: 10px;">Major players like Samsung and Apple are building R&D hubs in Vietnam and Malaysia.</p>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">Skill Development</div>
+                                <p class="slide-text" style="margin-top: 10px;">Governments are investing in STEM education to create a "future-ready" workforce.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-box" style="margin-top: 30px; grid-column: 1 / -1;">
+                            <div class="stat-label">Economic Impact</div>
+                            <p class="slide-text" style="margin-top: 10px;">Higher value-added industries lead to higher wages and a growing middle class.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="slide" id="slide5">
+                    <div class="slide-content">
+                        <h2 class="slide-title">The Digital Economy & Industry 4.0</h2>
+                        
+                        <div class="stat-box" style="margin-bottom: 25px;">
+                            <div class="stat-value">$1 Trillion</div>
+                            <div class="stat-label">Digital Economy Projection by 2030 (Tripling from current size)</div>
+                        </div>
+                        
+                        <h3 class="slide-subtitle">Industrial Synergy:</h3>
+                        <ul class="list-container">
+                            <li><span class="highlight">Smart Factories:</span> Using AI and IoT to boost productivity in Indonesia and Thailand.</li>
+                            <li><span class="highlight">E-commerce Logistics:</span> Industrial growth in warehousing and cold chain logistics to support digital trade.</li>
+                            <li><span class="highlight">DEFA:</span> The ASEAN Digital Economy Framework Agreement is streamlining cross-border digital trade.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Slide 6 -->
+                <div class="slide" id="slide6">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Regional Integration & Infrastructure</h2>
+                        
+                        <div class="stats-container">
+                            <div class="stat-box">
+                                <div class="stat-label">RCEP Impact</div>
+                                <p class="slide-text" style="margin-top: 10px;">The Regional Comprehensive Economic Partnership reduces tariffs and streamlines rules of origin.</p>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-label">Connectivity</div>
+                                <p class="slide-text" style="margin-top: 10px;">Massive investments in ports, high-speed rail, and energy grids (e.g., the ASEAN Power Grid).</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-box" style="margin-top: 30px; grid-column: 1 / -1;">
+                            <div class="stat-value">85%</div>
+                            <div class="stat-label">MSMEs provide jobs for 85% of the ASEAN workforce</div>
+                            <p class="slide-text" style="margin-top: 10px;">Industries help small businesses join global supply chains.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 7 -->
+                <div class="slide" id="slide7">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Key Drivers of Industrial Success</h2>
+                        
+                        <ul class="list-container">
+                            <li><span class="highlight">Demographic Dividend:</span> A young, urbanizing population of over 680 million people.</li>
+                            <li><span class="highlight">Cost Competitiveness:</span> Competitive labor costs compared to East Asia.</li>
+                            <li><span class="highlight">Strategic Location:</span> Proximity to major markets (China, India, Japan, and Australia).</li>
+                            <li><span class="highlight">Sustainability:</span> A new focus on "Green Industry"—renewable energy and nickel-based battery supply chains (Indonesia).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Slide 8 -->
+                <div class="slide" id="slide8">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Challenges & The Road Ahead</h2>
+                        
+                        <ul class="list-container">
+                            <li><span class="highlight">Productivity Gap:</span> Some regions still lag in automation and efficiency.</li>
+                            <li><span class="highlight">Infrastructure Disparity:</span> Bridging the gap between advanced hubs (Singapore) and emerging ones (Laos/Myanmar).</li>
+                            <li><span class="highlight">Geopolitical Risks:</span> Navigating trade tensions between major global powers.</li>
+                        </ul>
+                        
+                        <div class="stat-box" style="margin-top: 40px; grid-column: 1 / -1; background: rgba(219, 105, 105, 0.15); border-left-color: #db6969;">
+                            <div class="stat-label">Call to Action</div>
+                            <p class="slide-text" style="margin-top: 10px; font-size: 1.4rem; color: #ffc9c9;">Deepening regional cooperation is the only way to remain competitive.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 9 -->
+                <div class="slide" id="slide9">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Conclusion</h2>
+                        
+                        <div class="stat-box" style="margin-bottom: 30px;">
+                            <div class="stat-label">Summary</div>
+                            <p class="slide-text" style="margin-top: 10px; font-size: 1.5rem;">Industry is the backbone of ASEAN's resilience.</p>
+                        </div>
+                        
+                        <div class="stat-box" style="background: rgba(105, 219, 124, 0.15); border-left-color: #69db7c;">
+                            <div class="stat-label">Final Thought</div>
+                            <p class="slide-text" style="margin-top: 10px; font-size: 1.5rem;">By embracing technology, sustainability, and regional unity, ASEAN will remain the "Global Growth Engine" of the 21st century.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 10 -->
+                <div class="slide" id="slide10">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Q&A</h2>
+                        <h3 class="slide-subtitle">Thank you for your attention!</h3>
+                        
+                        <div class="stat-box" style="margin-top: 40px;">
+                            <div class="stat-label">Contact Information</div>
+                            <p class="slide-text" style="margin-top: 10px; font-size: 1.5rem;">[Your Email/Website]</p>
+                        </div>
+                        
+                        <div class="stat-box" style="margin-top: 30px;">
+                            <div class="stat-label">Sources</div>
+                            <p class="slide-text" style="margin-top: 10px;">ASEAN Secretariat, ADB, IMF, World Economic Forum</p>
+                        </div>
+                        
+                        <p class="sources">Presentation created with interactive HTML/CSS/JS slider</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-buttons">
+                <button class="nav-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="nav-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="slide-indicators">
+            <!-- Indicators will be generated by JavaScript -->
+        </div>
+        
+        <div class="slide-counter">
+            Slide <span id="current-slide">1</span> of <span id="total-slides">10</span>
+        </div>
+        
+        <div class="footer">
+            <p>Industrial Powerhouse: How Industry Boosts the ASEAN Economy | Presentation Slider</p>
+            <p>Use navigation buttons, indicators, or keyboard arrows to navigate through slides</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelector('.slides');
+            const slideCount = document.querySelectorAll('.slide').length;
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const currentSlideElement = document.getElementById('current-slide');
+            const totalSlidesElement = document.getElementById('total-slides');
+            const indicatorsContainer = document.querySelector('.slide-indicators');
+            
+            let currentSlide = 0;
+            totalSlidesElement.textContent = slideCount;
+            
+            // Create indicators
+            for (let i = 0; i < slideCount; i++) {
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                if (i === 0) indicator.classList.add('active');
+                indicator.setAttribute('data-index', i);
+                indicator.addEventListener('click', function() {
+                    goToSlide(parseInt(this.getAttribute('data-index')));
+                });
+                indicatorsContainer.appendChild(indicator);
+            }
+            
+            // Update slide position
+            function updateSlidePosition() {
+                slides.style.transform = `translateX(-${currentSlide * 10}%)`;
+                currentSlideElement.textContent = currentSlide + 1;
+                
+                // Update active indicator
+                document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    if (index === currentSlide) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Go to specific slide
+            function goToSlide(slideIndex) {
+                if (slideIndex < 0) slideIndex = slideCount - 1;
+                if (slideIndex >= slideCount) slideIndex = 0;
+                
+                currentSlide = slideIndex;
+                updateSlidePosition();
+            }
+            
+            // Next slide
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+            
+            // Event listeners for buttons
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                }
+            });
+            
+            // Auto-advance slides (every 15 seconds)
+            let slideInterval = setInterval(nextSlide, 15000);
+            
+            // Reset interval on user interaction
+            function resetInterval() {
+                clearInterval(slideInterval);
+                slideInterval = setInterval(nextSlide, 15000);
+            }
+            
+            prevBtn.addEventListener('click', resetInterval);
+            nextBtn.addEventListener('click', resetInterval);
+            indicatorsContainer.addEventListener('click', resetInterval);
+            
+            // Initialize
+            updateSlidePosition();
+        });
+    </script>
+</body>
+</html>
